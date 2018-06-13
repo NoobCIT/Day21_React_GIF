@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import API_KEY from '../variables.js';
 
 function DisplayGifs(props) {
   return (
