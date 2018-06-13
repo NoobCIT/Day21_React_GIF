@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import API_KEY from '../variables.js';
 
 function DisplayGifs(props) {
   return (
     <div className='container'>
       {props.list.map((gif) => {
-        return <img className='gif' key={gif.id} src={gif.images.downsized.url}></img>
+        return <img className='gif' key={gif.id} alt={gif.title} src={gif.images.downsized.url}></img>
       })}
     </div>
   )
@@ -24,7 +25,7 @@ class App extends Component {
   handleGenerateGifs() {
     const URL = 'https://api.giphy.com/';
     const ENDPOINT = 'v1/gifs/trending?';
-    const KEY = `api_key=${process.env.REACT_APP_API_KEY}`;
+    const KEY = `api_key=${API_KEY}`;
     const PARAMS = '&limit=25&rating=PG-13';
     fetch(URL + ENDPOINT + KEY + PARAMS)
       .then(response => response.json())
