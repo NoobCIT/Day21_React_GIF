@@ -25,7 +25,8 @@ class App extends Component {
   handleGenerateGifs() {
     const URL = 'https://api.giphy.com/';
     const ENDPOINT = 'v1/gifs/trending?';
-    const KEY = `api_key=${API_KEY}`;
+    //for the purposes of working on heroku, expose api key, yes this is bad.
+    const KEY = 'api_key=CldczHCABbAZy7qC13QL07yAU6ZuPans';
     const PARAMS = '&limit=25&rating=PG-13';
     fetch(URL + ENDPOINT + KEY + PARAMS)
       .then(response => response.json())
